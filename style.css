@@ -1,0 +1,22 @@
+/* 1. 겉에 있는 상자(div) 설정 */
+.profile-container {
+    width: 150px;         /* 원의 가로 크기 */
+    height: 150px;        /* 원의 세로 크기 (가로와 같아야 정원!) */
+    border-radius: 50%;   /* 테두리를 50% 깎아서 동그라미로 만듦 */
+    overflow: hidden;     /* 상자 밖으로 삐져나오는 사진 부분을 칼로 자르듯 숨김 */
+    margin: 0 auto;       /* 화면 가운데로 정렬 (선택 사항) */
+    border: 3px solid #f0f0f0; /* 돋보이게 하는 얇은 테두리 (선택 사항) */
+}
+
+/* 2. 안에 있는 사진(img) 설정 */
+.profile-img {
+    width: 100%;          /* 상자 너비에 꽉 채우기 */
+    height: 100%;         /* 상자 높이에 꽉 채우기 */
+    object-fit: cover;    /* 중요! 사진 비율을 유지하며 상자를 꽉 채움 (안 찌그러짐) */
+    object-position: center; /* 사진의 정중앙이 보이도록 배치 */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
+body {
+    font-family: 'Single Day', cursive; /* 모든 글자에 적용 */
+}
