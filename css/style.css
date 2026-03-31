@@ -1,0 +1,70 @@
+/* 1. 겉에 있는 상자(div) 설정 */
+.header-bg {
+    display: flex;  /* 상자 안의 요소들을 가로로 나란히 배치하기 위한 설정 */
+    flex-direction: row; /* 요소들을 세로로 쌓이도록 설정 */
+    gap: 4px; /* 요소들(profile-container와 info-container) 사이의 간격 설정 */    
+    align-items: center; /* 요소들을 수평 중앙 정렬 */
+    width: 100%; /* 상자 너비를 화면 전체로 설정 */
+    margin: 100px auto 10px; /* 상하 여백과 가운데 정렬 */
+}
+
+.profile-container {    /* 원형 프로필 이미지를 만들기 위한 상자(클래스) 설정 */
+    display: flex;
+    width: 280px;
+    height: 280px;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    border-radius: 50%;   /* 테두리를 50% 깎아서 동그라미로 만듦 */
+    overflow: hidden;     /* 상자 밖으로 삐져나오는 사진 부분을 칼로 자르듯 숨김 */
+    justify-content: center; /* 사진을 상자 안에서 수평 중앙 정렬 */
+}
+
+/* 2. 안에 있는 사진(img) 설정 */
+.profile-img {  /*이미 불러와진 profile-img 사진을 설정하는 클래스*/
+    width: 100%;          /* 상자 너비에 꽉 채우기 */
+    height: 100%;         /* 상자 높이에 꽉 채우기 */
+    object-fit: cover;    /* 중요! 사진 비율을 유지하며 상자를 꽉 채움 (안 찌그러짐) */
+}
+
+.background-bg {  /* 배경 이미지 설정을 위한 클래스 */
+    position: absolute;  /* 절대 위치로 설정하여 다른 요소들과 겹치도록 함 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background-image: url('/yanggggg/images/star.jpg'); /* 배경 이미지 경로 */
+    background-size: cover; /* 배경 이미지를 요소 크기에 맞게 조절 */
+    background-position: -80% 50%; /* 배경 이미지의 중심이 보이도록 설정 */
+    z-index: -1; /* 다른 요소들보다 뒤에 배치 */
+}
+
+.profile-card {  /* 프로필 카드 설정 */
+    position: relative; /* 배경 이미지 위에 배치하기 위해 상대 위치로 설정 */
+    background-color: rgba(255, 255, 255, 0.8); /* 반투명 흰색 배경 */
+    margin: 16px auto; /* 상하 여백과 가운데 정렬 */
+    padding: 10px 80px; /* 카드 내부 여백 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+    background-color: #f9f9f9; /* 정보 목록 배경색 */
+    border-radius: 15px;  /* 정보 목록의 모서리를 둥글게 설정 */
+    max-width: 320px; /* 정보 목록의 최대 너비 설정 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 정보 목록에 그림자 효과 추가 */    
+    position: relative; /* 정보 목록의 텍스트를 수직 중앙 정렬 */
+}   
+
+.info-container {  /* 정보 목록 설정 */
+    list-style: none; /* 기본 리스트 스타일 제거 */
+    padding: 20px;
+    margin: 20px auto; /* 상하 여백과 가운데 정렬 */
+}
+
+.info-item {  /* 각 정보 항목 설정 (자기소개, 이메일, 인스타 아이디)*/
+    margin: 10px 0; /* 항목 간의 상하 여백 설정 */
+    font-size: 18px; /* 글자 크기 설정 */
+    text-align: left; /* 항목을 수직 중앙 정렬 */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap');
+body {
+    font-family: 'Single Day', cursive; /* 모든 글자에 적용 */
+}
