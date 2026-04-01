@@ -7,6 +7,7 @@
 }
 
 body {
+  display: flex;
   font-family: 'Single Day', cursive;
   background: #000;
   overflow: hidden;
@@ -47,18 +48,7 @@ body {
   padding: 36px 36px 40px;
   width: 320px;        /* 오른쪽 사진 위에 딱 올라갈 너비 */
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
-}
-
-/* 말풍선 꼬리 (왼쪽으로 뾰족하게) */
-.card::before {
-  content: '';
-  position: absolute;
-  left: -20px;
-  top: 46%;
-  transform: translateY(-50%);
-  border: 10px solid transparent;
-  border-right-color: rgba(225, 225, 225, 0.82);
-  border-left: 0;
+  backdrop-filter: blur(4px); /* 배경 흐림 효과 추가 */
 }
 
 .card h2 {
@@ -87,14 +77,15 @@ body {
 }
 
 .form-row input {
-  flex: 1;
+  width: initial; /*html에서 기본적으로 100%로 설정된 것을 초기화*/
+  flex: 1;  /*fill 설정*/
   height: 32px;
   border: 1.5px solid #bbb;
   border-radius: 5px;
   padding: 0 10px;
   font-family: 'Single Day', cursive;
   font-size: 14px;
-  outline: none;
+  outline: none;  /*포커스 시 기본 파란 테두리 제거*/
   background: rgba(255, 255, 255, 0.65);
   transition: border-color 0.2s;
 }
