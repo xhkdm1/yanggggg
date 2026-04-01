@@ -20,8 +20,8 @@ const sendEmail = () => {
 
   // EmailJS로 폼 데이터 전송
   emailjs
-    .sendForm('service_j44ao5m', 'template_hj2lofy', form, {
-      publicKey: 'CuT36pWvON0drOFmg',
+    .sendForm('service_j44ao5m', 'template_v1zd1s2', form, {
+      publicKey: 'CuT36pWvON0drOFmg', // 🚨 여기에 EmailJS에서 발급받은 Public Key를 입력하세요
     })
     .then(
       () => {
