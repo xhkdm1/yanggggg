@@ -94,39 +94,3 @@ body {
   border-color: #ff6b9d;
   background: #fff;
 }
-
-/* ── 제출 버튼 디자인 (필요시 수정) ── */
-.submit-btn {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  background-color: #ff6b9d;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-family: 'Single Day', cursive;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.submit-btn:hover {
-  background-color: #ff4d88;
-}
-
-/* ── 메일 전송 중 로딩 화면 (#dimOverlay) ── */
-#dimOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.5); /* 반투명 검은색 */
-  z-index: 999;
-  display: none; /* 평소에는 숨겨둠 */
-}
-
-/* JS에서 'on' 클래스를 추가하면 화면에 나타남 */
-#dimOverlay.on {
-  display: block; 
-}
