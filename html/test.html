@@ -6,16 +6,25 @@
   <title>あなたは誰ですか？</title>
 
   <link rel="stylesheet" href="style.css">
+  <script src="profile.js"></script>
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      // profile.js에 있는 publicKey와 동일하게 설정
+      emailjs.init("CuT36pWvON0drOFmg"); 
+    })();
+  </script>
 </head>
-<body>
 
+<body>
   <div class="photo-grid">
-    <img class="photo" src="/yanggggg/images/image 250.png" alt="photo1">
+    <img class="photo" src="/yanggggg/images/image 250.png" alt="photo1"> 
     <img class="photo" src="/yanggggg/images/IMG_2837.JPG" alt="photo2">
     <img class="photo" src="/yanggggg/images/IMG_2875.JPG" alt="photo3">
   </div>
+
+  <div id="toast" class="toast">메시지가 여기에 표시됩니다.</div>
 
   <div class="card">
     <h2>あなたは誰ですか？💕</h2>
@@ -42,9 +51,6 @@
 
   <div id="dimOverlay"></div>
 
-  <div id="toast" class="toast">메시지가 여기에 표시됩니다.</div>
-
   <script src="profile.js"></script>
-
 </body>
 </html>

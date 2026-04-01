@@ -1,14 +1,12 @@
 const form = document.querySelector('form');
 const submitButton = document.querySelector('#sendEmail');
 const dimOverlay = document.querySelector('#dimOverlay');
-
-// ✨ HTML에서 만든 토스트 요소 가져오기
 const toast = document.querySelector('#toast');
 
-// ✨ 토스트창을 3초 동안 보여주는 함수
+// ✨ 예쁜 토스트 창을 띄우는 함수 (3초 뒤 사라짐)
 const showToast = (message) => {
-  toast.textContent = message; // 전달받은 메시지로 글자 변경
-  toast.classList.add('show'); // 짠! 하고 나타나게 함
+  toast.textContent = message;
+  toast.classList.add('show');
   
   // 3초(3000ms) 뒤에 다시 숨기기
   setTimeout(() => {
@@ -17,30 +15,32 @@ const showToast = (message) => {
 };
 
 const sendEmail = () => {
+  // 전송 시작: 화면을 어둡게 만듦
   dimOverlay.classList.add('on');
 
+  // EmailJS로 폼 데이터 전송
   emailjs
     .sendForm('service_j44ao5m', 'template_hj2lofy', form, {
       publicKey: 'CuT36pWvON0drOFmg',
     })
     .then(
       () => {
+        // 성공 시: 오버레이 끄고, 성공 토스트 띄우고, 폼 리셋
         dimOverlay.classList.remove('on');
-        // 🚨 투박한 alert 대신 예쁜 showToast 사용!
         showToast(`${form.from_name.value}님, 메일 전송에 성공했습니다 :)`);
         form.reset();
       },
       (error) => {
+        // 실패 시: 오버레이 끄고, 실패 토스트 띄우기
         dimOverlay.classList.remove('on');
-        // 🚨 실패했을 때도 토스트로 띄워줌
-        showToast(`${form.from_name.value}님, 메일 전송에 실패했습니다 :(`);
+        showToast(`메일 전송에 실패했습니다 :(`);
         console.error('메일 전송 실패:', error);
       },
     );
 };
 
-// 버튼 클릭 시 sendEmail 함수 호출
+// 버튼 클릭 시 새로고침을 막고 sendEmail 함수 실행
 submitButton.addEventListener('click', (event) => {
-  event.preventDefault(); 
+  event.preventDefault(); // 🚨 제일 중요: 폼 제출 시 페이지 새로고침 방지
   sendEmail();
 });
