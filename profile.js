@@ -28,7 +28,4 @@ const sendEmail = () => {
 };
 
 // 버튼 클릭 시 sendEmail 함수 호출
-submitButton.addEventListener('click', (event) => {
-  event.preventDefault(); // 버튼 클릭 시 페이지가 새로고침 되는 기본 현상 방지
-  sendEmail();
-});
+submitButton.addEventListener('click', sendEmail);
