@@ -130,3 +130,30 @@ body {
 #dimOverlay.on {
   display: block; 
 }
+
+/* ── 토스트 알림창 디자인 ── */
+.toast {
+  position: fixed;
+  bottom: 20px; /* 처음엔 화면 아래쪽에 대기 */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.75); /* 반투명 까만색 */
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-family: 'Single Day', cursive; /* 네가 고른 귀여운 폰트 적용! */
+  font-size: 16px;
+  z-index: 1000;
+  
+  /* 애니메이션 설정: 평소엔 투명(opacity:0)하고 숨겨둠 */
+  opacity: 0; 
+  visibility: hidden;
+  transition: opacity 0.3s ease, bottom 0.3s ease;
+}
+
+/* JS에서 'show' 클래스를 붙여주면 스르륵 나타나는 마법 */
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+  bottom: 50px; /* 살짝 위로 떠오르는 효과 */
+}
