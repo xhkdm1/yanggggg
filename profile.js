@@ -7,7 +7,7 @@ const sendEmail = () => {
   dimOverlay.classList.add('on');
 
   emailjs
-    .sendForm('service_j44ao5m', 'template_v1zd1s2', form, {
+    .sendForm('service_j44ao5m', 'template_hj2lofy', form, {
       // publicKey: 'emailjs에서 발급받은 사용자 키를 입력하세요',
     })
     .then(
