@@ -7,8 +7,8 @@ const sendEmail = () => {
   dimOverlay.classList.add('on');
 
   emailjs
-    .sendForm('service_i8ro3rd', 'runauxlabsTemplate', form, {
-      publicKey: '여기에_진짜_퍼블릭_키를_넣으세요', // 💡 주석(//) 지우기!
+    .sendForm('service_j44ao5m', 'template_v1zd1s2', form, {
+      publicKey: 'CuT36pWvON0drOFmg', // 💡 주석(//) 지우기!
     })
     .then(
       () => {
