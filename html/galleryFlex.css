@@ -1,0 +1,32 @@
+@charset "UTF-8";   /*앳차셋, 한글이 포함되어 있으므로 글자가 깨지지 않게 -> 문자 인코딩을 UTF-8로 설정*/
+/* Gallery(카드형) Flex Layout */
+
+body {  /*전체 페이지에 대한 스타일링, body 태그*/
+  margin: 0;    /*박스 바깥쪽 여백 없애기, 웹페이지 전체에 여백 없애기, 초기화하는 느낌*/
+  padding: 0;   /*박스 안쪽 여백 없애기, 웹페이지 전체에 여백 없애기, 초기화하는 느낌*/
+  background-color: #f0f0f0;    /*배경색은 연한 회색으로 설정*/
+}
+
+.galleryContainer { /*부모 상자 - flex 정렬 규칙, 클래스명*/
+  display: flex;    /*부모 상자를 flex 컨테이너로 설정하여 자식 상자들을 flex 아이템으로 만듦*/
+  flex-wrap: wrap;  /*자식 상자들이 한 줄에 다 들어가지 않으면 다음 줄로 넘어가도록 설정, 피그마에서 auto layout -> wrap과 동잁*/
+  gap: 10px;    /*자식 상자들 사이에 10px의 간격을 줌*/
+}
+
+.galleryItem {  /*자식 상자 - 카드 디자인, 클래스명*/
+  background-color: white;  /*카드 배경색은 흰색으로 설정*/
+  /*flex: [늘어날 비율] [줄어들 비율] [기본 크기], flex는 속성(명령어 느낌)*/
+  flex: 1 1 calc(33.333% - 20px);   /*각 카드가 컨테이너의 1/3을(100%는 전체 화면 채우는 거니까, 100/3) 차지하도록 설정, gap을 10px주기로 했으니까 고려하여 20px 빼줌*/
+  height: 200px;    /*카드 높이는 200px로 고정(fixed)*/
+  box-sizing: border-box;   /*박스 크기 계산 방식, padding과 border를 포함하여 크기를 계산하도록 설정, 레이아웃 어긋나는 걸 막아줌, 카드의 크기가 정확히 1/3이 되도록 보장*/
+  border-radius: 12px;  /*카드 모서리를 둥글게, 피그마에서는 corner radius와 동일*/
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /*카드에 그림자 효과, x축 y축 blur정도 색상값*(마지막 0.1은 불투명도)*/
+  overflow: hidden; /*카드 안의 이미지가 카드 영역을 벗어나지 않도록 설정, 피그마에서 clip content와 동일*/
+}
+
+.galleryItem img {
+  width: 100%;  /*.galleryItem(부모 상자)의 가로세로 크기 100% 로 설정하여 카드 영역을 완전히 채우도록 설정*/
+  height: 100%;
+  object-fit: cover; /*이미지가 카드 영역을 완전히 채우도록 설정, 찌그러지지 않게, 피그마에서 fill과 동일*/
+  display: block;   /*이미지 요소를 블록 레벨 요소로 설정하여 이미지 아래에 불필요한 여백이 생기는 것을 방지*/
+}
