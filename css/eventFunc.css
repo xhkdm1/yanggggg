@@ -1,0 +1,8 @@
+.cat{
+        display: none;  /*화면에서 사라져!*/
+    }
+
+.cat.on {
+    display: block; /*나타나!*/
+}
+
