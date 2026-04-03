@@ -159,3 +159,27 @@ body {
     right: 5%;
   }
 }
+
+/* ── 이벤트 함수 연습용 스타일 ── */
+.yuushi_photo {
+  display: none;  /*화면에서 사라져!*/
+}
+
+.yuushi_photo.on {
+  display: block; /*나타나!*/
+}
+
+#yuushi_toggle_btn {
+  display: block;             /* 버튼을 한 줄을 다 차지하는 블록 요소로 만듭니다. */
+  margin: 20px auto;        /* 위 여백 20px, 좌우 여백 자동(auto)으로 중앙 정렬 */
+  padding: 10px 20px;       /* 버튼 내부 여백 */
+  border: none;             /* 테두리 없앰 */
+  border-radius: 5px;       /* 모서리 둥글게 */
+  cursor: pointer;          /* 마우스 커서를 손가락 모양으로 */
+      
+    /* 폰트/디자인 (원하시는 대로 수정 가능!) */
+  font-size: 16px;
+  background-color: #fce4ec; /* 연한 분홍색 (말풍선의 하트와 깔맞춤) */
+  color: #333;              /* 글자 색 */
+  font-weight: bold;        /* 글자 굵게 */
+}
