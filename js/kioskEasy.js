@@ -8,10 +8,10 @@ const totalDisplay = document.querySelector("#total");
 
 // 메뉴 버튼 클릭 이벤트 추가
 menu.addEventListener("click", (event) => {
-  console.log(event.target.tagName);
+  console.log(event.target.tagName);    /*잘 누르고 있는지 판별하기 위해 콘솔 로그 넣음*/
   // 버튼 세개가 담겨있는 메뉴를 클릭했는데, 
   // 니가 클릭한 그 위치(타겟)가 버튼이면 통과
-  if (event.target.tagName === "BUTTON") {
+  if (event.target.tagName === "BUTTON") {  /*=== 는 일치연산자(엄격하게 비교), ==는 동등연산자*/
     const name = event.target.getAttribute("data-name");
     // 그 타겟의 속성(data-name)좀 떼와, name에 할당해
     const price = event.target.getAttribute("data-price");
@@ -20,6 +20,9 @@ menu.addEventListener("click", (event) => {
 
     // 장바구니 추가 또는 수량 증가, 삼항연산자 버전
     // cart[name] = cart[name] ? { price, count: cart[name].count + 1 } : { price, count: 1 };
+    // 키: 값의 형태 -> count (키), cart[name].count + 1 (값)
+    // : 이건 뭐지?
+    // price 혼자만 쓴 이유: "(내가 지은 키 이름) : (변수명)"  -> 객체의 키와 값이 같을 때, 키 이름을 생략할 수 있는 문법
     // 장바구니에 추가하거나 수량 증가, if문 버전
 
     // 객체 접근법: 1. 점표기법(객체명.키이름) 2. 대괄호표기법(객체명[키이름])
