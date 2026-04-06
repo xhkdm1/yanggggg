@@ -4,6 +4,10 @@ const form = document.querySelector('form');
 const submitButton = document.querySelector('#sendEmail');
 const dimOverlay = document.querySelector('#dimOverlay');
 
+// 이벤트 함수 연습용 요소들
+const yuushiButton = document.querySelector('#yuushi_toggle_btn');
+const yuushiImage = document.querySelector('.yuushi_photo');  
+
 const sendEmail = () => {
   dimOverlay.classList.add('on');
 
@@ -26,3 +30,15 @@ submitButton.addEventListener('click', (event) => {
   event.preventDefault();
   sendEmail();
 });
+
+// 이벤트 함수 연습용
+yuushiButton.addEventListener("click",( ) => {
+  conosole.log('유우시 버튼이 클릭되었습니다. 유우시 사진으로 사람들을 행복하게 해주세요. 네 미소로 세상을 구할 수 있어..아디오스..');
+  yuushiImage.classList.toggle('on');
+  yuushiImage.classList.toggle('off');
+  yuushiImage.classList.toggle;
+}, false);
+
+let greet = (name) => console.log(`안녕, ${name}님 반가워요!`);    //backtick을 이용하여 문자열과 변수를 함께 출력하는 방법
+
+greet('케진');

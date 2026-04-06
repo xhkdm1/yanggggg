@@ -1,6 +1,7 @@
-const modalButton=document.querySelector('#modal_bt');
+const modalButton=document.querySelector('#modal_bt');  //#은 id 식별하기 위한 기호, .은 class 선택자, 태그명은 그냥 태그명으로 선택 가능
 const catImage=document.querySelector('.cat');
 
+//버튼을 누른다는 이벤트와 그 기능을 실행하게 하는 함수 
 modalButton.addEventListener("click",( ) => {    //이벤트가 발생했을 때 해야 하는 일
         console.log('버튼이 클릭되었습니다')    //콘솔창에 버튼이 클릭되었다는 메시지를 출력
         catImage.classList.toggle('on');    //무슨일을 하는지 작성

@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>  <!--눈에 보이진 않지만, 웹사이트에 필요한 정보-->
     <meta charset="UTF-8">
     <title>고양이 토글 페이지</title>
 
-    <link rel="stylesheet" href="/yanggggg/css/eventFunc.css"> 
+    <!--css 파일을 head 태그에 넣어서, 스타일 가이드 선제시-->
+    <link rel="stylesheet" href="/yanggggg/css/eventFunc.css"> <!--rel(relationship), stylesheet로 지정하면 스타일(디자인)을 담당하는 시트임을 파악 가능-->
 </head>
 
 <body>  <!--눈에 보이는 부분-->
-    <button id="modal_bt">저는 버튼입니다</button>
+    <button id="modal_bt">저는 버튼입니다</button>  <!--id는 고유한 식별자-->
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS840vymDy1whCJDAx3V8WrN0wT1Z2MWj7GOA&s" 
          alt="절대경로삼색이" width="400" class="cat">
 
+    <!--js 파일은 브라우저에겐 무거움, 이걸 먼저 만나면 
+    다운로드 후 실행하기까지 Html 읽기를 멈춤, 에러 위험-->
     <script src="/yanggggg/js/eventFunc.js"></script>
 </body>
 </html>
