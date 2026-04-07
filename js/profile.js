@@ -4,9 +4,11 @@ const form = document.querySelector('form');
 const submitButton = document.querySelector('#sendEmail');
 const dimOverlay = document.querySelector('#dimOverlay');
 
-//방문자 수 표시 요소와 초기 방문자 수 설정
-const countDisplay = document.querySelector("#visitor-count");
-let visitorCount = 0;
+// 1. HTML에서 하트 버튼과 숫자 도화지 리모컨 가져오기
+const heartBtn = document.querySelector("#heart-btn");
+const confessCountDisplay = document.querySelector("#confess-count");
+// 2. 고백 횟수를 기억할 비밀 수첩 만들기 (0명부터 시작!)
+let confessCount = 0;
 
 // 이벤트 함수 연습용 요소들
 const yuushiButton = document.querySelector('#yuushi_toggle_btn');
@@ -33,11 +35,20 @@ const sendEmail = () => {
 submitButton.addEventListener('click', (event) => {
   event.preventDefault();
   sendEmail();
+});
 
+// 3. 하트 버튼에 클릭 감지기(알바생) 달아주기
+heartBtn.addEventListener("click", () => {
+  
+  // 4. 하트를 누를 때마다 숫자 1 올리기
+  confessCount++;
+  
+  // 5. 바뀐 숫자를 화면에 덮어쓰기
+  confessCountDisplay.textContent = confessCount;
 
-  //"입력완료><" 버튼 누를 때마다 방문자 수 1씩 증가시키기
-  visitorCount++; // 숫자 1 추가 (visitorCount = visitorCount + 1 과 동일)
-  countDisplay.textContent = visitorCount.toLocaleString(); // 콤마 찍어서 화면에 덮어쓰기
+  // 6. (보너스 기능) 누를 때 하트 색깔을 빨간색으로 바꾸기!
+  heartBtn.textContent = "❤️"; 
+  
 });
 
 // 이벤트 함수 연습용
