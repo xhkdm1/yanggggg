@@ -4,6 +4,10 @@ const form = document.querySelector('form');
 const submitButton = document.querySelector('#sendEmail');
 const dimOverlay = document.querySelector('#dimOverlay');
 
+//방문자 수 표시 요소와 초기 방문자 수 설정
+const countDisplay = document.querySelector("#visitor-count");
+let visitorCount = 0;
+
 // 이벤트 함수 연습용 요소들
 const yuushiButton = document.querySelector('#yuushi_toggle_btn');
 const yuushiImage = document.querySelector('.yuushi_photo');  
@@ -29,6 +33,11 @@ const sendEmail = () => {
 submitButton.addEventListener('click', (event) => {
   event.preventDefault();
   sendEmail();
+
+
+  //"입력완료><" 버튼 누를 때마다 방문자 수 1씩 증가시키기
+  visitorCount++; // 숫자 1 추가 (visitorCount = visitorCount + 1 과 동일)
+  countDisplay.textContent = visitorCount.toLocaleString(); // 콤마 찍어서 화면에 덮어쓰기
 });
 
 // 이벤트 함수 연습용

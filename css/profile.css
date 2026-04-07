@@ -177,9 +177,24 @@ body {
   border-radius: 5px;       /* 모서리 둥글게 */
   cursor: pointer;          /* 마우스 커서를 손가락 모양으로 */
       
-    /* 폰트/디자인 (원하시는 대로 수정 가능!) */
+  /* 폰트/디자인 (원하시는 대로 수정 가능!) */
   font-size: 16px;
   background-color: #fce4ec; /* 연한 분홍색 (말풍선의 하트와 깔맞춤) */
   color: #333;              /* 글자 색 */
   font-weight: bold;        /* 글자 굵게 */
+}
+
+/* 키오스크 코딩 응용: 버튼 누를시 방문자수 증가 업데이트 */
+#visitor-badge {
+  position: fixed;      /* 화면에 고정 */
+  top: 20px;           /* 위에서 20px 내림 */
+  right: 20px;         /* 오른쪽에서 20px 띄움 */
+  background-color: #333; /* 배경색 (취향껏 변경 가능) */
+  color: white;        /* 글자색 */
+  padding: 10px 15px;
+  border-radius: 30px; /* 둥글게 */
+  font-size: 0.9rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* 그림자 효과 */
+  z-index: 9999;       /* 다른 요소보다 항상 위에 보이게 */
 }
