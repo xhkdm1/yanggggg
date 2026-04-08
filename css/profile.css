@@ -185,12 +185,34 @@ body {
 }
 
 /* 키오스크 코딩 응용: 버튼 누를시 숫자 증가 업데이트 */
+/* 우측 상단에 고정되는 카운터 디자인 */
+/* 우측 상단 고백 버튼 디자인 (투명하고 은은하게!) */
 #confess-area {
-  margin-top: 20px;
-  font-size: 1.2rem;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  
+  /* ✨ 투명도 낮추고 유리 질감(Glassmorphism) 주기 */
+  background: rgba(255, 255, 255, 0.); /* 0.9에서 0.3으로 확 낮춤! */
+  backdrop-filter: blur(1px); /* 뒤에 있는 사진이 예쁘게 비치도록 블러 처리 */
+  border: 1px solid rgba(255, 107, 157, 0.4); /* 테두리도 얇고 반투명하게 */
+  
+  padding: 8px 16px;
+  border-radius: 30px;
+  
+  font-family: 'Single Day', cursive; 
+  font-size: 1rem; /* 크기도 살짝 줄여서 덜 튀게 */
   font-weight: bold;
+  color: #222; /* 글씨는 잘 보이게 유지 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* 그림자도 아주 연하게 */
+  
+  cursor: pointer; 
+  transition: all 0.3s ease;
 }
-#heart-btn {
-  cursor: pointer;      /* 마우스 올리면 손가락 모양으로 변신 */
-  user-select: none;    /* 하트를 마우스로 드래그해서 파랗게 선택되는 것 방지 */
+
+/* 마우스를 올렸을 때만 살짝 밝아지게! */
+#confess-area:hover {
+  transform: scale(1.05); 
+  background: rgba(255, 255, 255, 0.6); 
 }
